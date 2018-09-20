@@ -1,0 +1,47 @@
+{
+    "name": "gmail-template-extension",
+    "version": "1.0.0",
+    "description": "Gmail template extension",
+    "main": "src/index.js",
+    "scripts": {
+        "build": "./node_modules/webpack/bin/webpack.js -p",
+        "test": "jest"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://github.com/tiagoinacio/gmail-template-extension.git"
+    },
+    "keywords": [
+        "chrome",
+        "gmail",
+        "extension",
+        "template",
+        "templates"
+    ],
+    "author": "Tiago Inácio",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/tiagoinacio/gmail-template-extension/issues"
+    },
+    "homepage": "https://github.com/tiagoinacio/gmail-template-extension#readme",
+    "devDependencies": {
+        "@babel/core": "^7.1.0",
+        "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
+        "@babel/preset-env": "^7.1.0",
+        "@babel/preset-react": "^7.0.0",
+        "babel-loader": "^8.0.2",
+        "css-loader": "^1.0.0",
+        "jest": "^23.6.0",
+        "jsx": "^0.9.89",
+        "prop-types": "^15.6.2",
+        "react": "^16.5.2",
+        "react-dom": "^16.5.2",
+        "sass-loader": "^7.1.0",
+        "style-loader": "^0.23.0",
+        "uglifyjs-webpack-plugin": "^2.0.1",
+        "webpack": "^4.19.1",
+        "webpack-cli": "^3.1.0",
+        "webpack-concat-plugin": "^3.0.0",
+        "webpack-dev-server": "^3.1.8"
+    }
+}
