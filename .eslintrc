@@ -2,10 +2,10 @@
   "parser": "babel-eslint",
   "extends": ["airbnb-base", "plugin:react/recommended"],
   "globals": {
-      "InboxSDK": true
+      "InboxSDK": true,
+      "chrome": true
   },
   "rules": {
-      // Indent with 4 spaces
-      "indent": ["error", 4],
+      "indent": ["error", 4]
   }
 }

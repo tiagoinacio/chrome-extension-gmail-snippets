@@ -2,7 +2,7 @@ import React from 'react';
 import styles from './app.css';
 
 const App = () => (
-    <div className={ styles.title }>App!</div>
+    <iframe className={ styles.ifram} src='https://www.bing.com'></iframe>
 );
 
 export default App;
