@@ -1,0 +1,11 @@
+{
+  "parser": "babel-eslint",
+  "extends": ["airbnb-base", "plugin:react/recommended"],
+  "globals": {
+      "InboxSDK": true
+  },
+  "rules": {
+      // Indent with 4 spaces
+      "indent": ["error", 4],
+  }
+}

@@ -4,8 +4,10 @@
     "description": "Gmail template extension",
     "main": "src/index.js",
     "scripts": {
-        "build": "./node_modules/webpack/bin/webpack.js -p",
-        "test": "jest"
+        "compile": "./node_modules/webpack/bin/webpack.js -p",
+        "build": "npm run compile",
+        "test": "jest",
+        "release": "standard-version"
     },
     "repository": {
         "type": "git",
@@ -24,19 +26,33 @@
         "url": "https://github.com/tiagoinacio/gmail-template-extension/issues"
     },
     "homepage": "https://github.com/tiagoinacio/gmail-template-extension#readme",
+    "dependencies": {
+        "react": "^16.5.2",
+        "react-dom": "^16.5.2"
+    },
     "devDependencies": {
         "@babel/core": "^7.1.0",
         "@babel/plugin-proposal-object-rest-spread": "^7.0.0",
         "@babel/preset-env": "^7.1.0",
         "@babel/preset-react": "^7.0.0",
+        "babel-eslint": "^8.2.6",
         "babel-loader": "^8.0.2",
+        "clean-webpack-plugin": "^0.1.19",
+        "copy-webpack-plugin": "^4.5.2",
         "css-loader": "^1.0.0",
+        "eslint": "^4.19.1",
+        "eslint-config-airbnb": "^17.1.0",
+        "eslint-loader": "^2.1.1",
+        "eslint-plugin-import": "^2.14.0",
+        "eslint-plugin-jsx-a11y": "^6.1.1",
+        "eslint-plugin-react": "^7.11.1",
+        "generate-json-file-webpack-plugin": "0.0.3",
         "jest": "^23.6.0",
         "jsx": "^0.9.89",
+        "node-sass": "^4.9.3",
         "prop-types": "^15.6.2",
-        "react": "^16.5.2",
-        "react-dom": "^16.5.2",
         "sass-loader": "^7.1.0",
+        "standard-version": "^4.4.0",
         "style-loader": "^0.23.0",
         "uglifyjs-webpack-plugin": "^2.0.1",
         "webpack": "^4.19.1",
