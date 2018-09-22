@@ -51,6 +51,7 @@ module.exports = {
     },
     optimization: {
         minimizer: [
+            // Minify and mangle
             new UglifyJsPlugin(),
         ],
     },
@@ -62,7 +63,7 @@ module.exports = {
             filename: 'manifest.json',
             value: {
                 manifest_version: 2,
-                name: 'Gmail Snippets Extension',
+                name: 'Chrome Extension Gmail Snippets',
                 version: '1.0',
                 permissions: [
                     'https://mail.google.com/',
@@ -70,18 +71,35 @@ module.exports = {
                     'webRequest',
                     'webRequestBlocking',
                 ],
+                // hack to allow for cors request for the iframe
                 background: {
                     scripts: ['background.js'],
                     persistent: true,
                 },
                 content_scripts: [
                     {
-                        matches: ['https://mail.google.com/*', 'https://inbox.google.com/*'],
-                        js: ['inboxsdk.js', 'app.js'],
+                        matches: [
+                            'https://mail.google.com/*',
+                            'https://inbox.google.com/*'
+                        ],
+                        js: [
+                            'inboxsdk.js',
+                            'app.js'
+                        ],
+                        // The "all_frames" field allows the extension to specify if JavaScript and CSS files
+                        // should be injected into all frames matching the specified URL requirements
+                        // or only into the topmost frame in a tab.
                         all_frames: true,
                     },
                 ],
-                content_security_policy: "script-src 'self' https://www.bing.com; frame-src 'self' https://www.bing.com; object-src 'self'",
+                /*
+                The content security policy for Chrome Apps restricts you from doing the following:
+
+                You can’t use inline scripting in your Chrome App pages. The restriction bans both <script> blocks and event handlers (<button onclick="...">).
+                You can’t reference any external resources in any of your app files (except for video and audio resources). You can’t embed external resources in an iframe.
+                You can’t use string-to-JavaScript methods like eval() and new Function().
+                */
+                content_security_policy: "script-src 'self' https://email-snippets.herokuapp.com/; frame-src 'self' https://email-snippets.herokuapp.com/; object-src 'self'",
             },
         }),
         // copies the inboxsdk to the dist folder

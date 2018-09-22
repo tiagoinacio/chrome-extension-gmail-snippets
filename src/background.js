@@ -1,4 +1,4 @@
-const hosts = 'https://www.bing.com';
+const hosts = 'https://email-snippets.herokuapp.com';
 
 chrome.webRequest.onHeadersReceived.addListener((details) => {
     for (let i = 0; i < details.responseHeaders.length; i += 1) {
@@ -19,6 +19,6 @@ chrome.webRequest.onHeadersReceived.addListener((details) => {
         responseHeaders: details.responseHeaders,
     };
 }, {
-    urls: ['https://mail.google.com/*'],
+    urls: ['https://mail.google.com/*', 'https://inbox.google.com/*'],
     types: ['main_frame'],
 }, ['blocking', 'responseHeaders']);

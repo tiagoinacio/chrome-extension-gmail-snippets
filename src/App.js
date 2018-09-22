@@ -1,8 +1,10 @@
 import React from 'react';
-import styles from './app.css';
 
 const App = () => (
-    <iframe className={ styles.ifram} src='https://www.bing.com'></iframe>
+    <iframe
+        src='https://email-snippets.herokuapp.com'>
+        Your browser does not support iframes.
+    </iframe>
 );
 
 export default App;
