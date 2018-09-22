@@ -99,7 +99,7 @@ module.exports = {
                 You can’t reference any external resources in any of your app files (except for video and audio resources). You can’t embed external resources in an iframe.
                 You can’t use string-to-JavaScript methods like eval() and new Function().
                 */
-                content_security_policy: "script-src 'self' https://email-snippets.herokuapp.com/; frame-src 'self' https://email-snippets.herokuapp.com/; object-src 'self'",
+                content_security_policy: "script-src 'self' https://email-snippets.herokuapp.com; frame-src 'self' https://email-snippets.herokuapp.com; object-src 'self'",
             },
         }),
         // copies the inboxsdk to the dist folder
