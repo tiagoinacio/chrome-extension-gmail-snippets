@@ -9,7 +9,7 @@ const composeApp = ({ Compose }) => {
     Compose.registerComposeViewHandler((composeView) => {
         composeView.addButton({
             title: 'Chrome Extension Gmail Snippets',
-            iconUrl: 'https://image.flaticon.com/icons/svg/54/54908.svg',
+            iconUrl: 'https://image.flaticon.com/icons/svg/1001/1001371.svg',
             iconClass: 'button',
             hasDropdown: true,
             onClick(event) {
