@@ -1,3 +1,13 @@
 .button {
     cursor: pointer;
 }
+
+div.inboxsdk__menu {
+    top: -80px;
+    height: 300px;
+    width: 200px;
+}
+
+div.inboxsdk__menu .inboxsdk__menuContent {
+    height: 100%;
+}
