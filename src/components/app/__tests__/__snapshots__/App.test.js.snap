@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`App when iframe is loaded should not render the loader 1`] = `
+<App>
+  <iframe
+    className="iframe"
+    onLoad={[Function]}
+    src="https://email-snippets.herokuapp.com"
+  >
+    Your browser does not support iframes.
+  </iframe>
+</App>
+`;
+
+exports[`App while iframe is not loaded should render the loader 1`] = `
+<App>
+  <div
+    className="loader"
+  />
+  <iframe
+    className="iframe"
+    onLoad={[Function]}
+    src="https://email-snippets.herokuapp.com"
+  >
+    Your browser does not support iframes.
+  </iframe>
+</App>
+`;

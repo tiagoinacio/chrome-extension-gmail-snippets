@@ -6,13 +6,13 @@ const CopyWebpackPlugin = require('copy-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-    context: __dirname,
+    context: path.join(__dirname, '../'),
     devtool: debug ? 'inline-sourcemap' : null,
     entry: {
         app: './src',
     },
     output: {
-        path: path.join(__dirname, 'dist'),
+        path: path.join(__dirname, '../dist'),
         filename: '[name].js',
     },
     module: {
@@ -39,13 +39,6 @@ module.exports = {
                 exclude: /node_modules/,
                 use: {
                     loader: 'babel-loader',
-                    options: {
-                        presets: [
-                            '@babel/preset-env',
-                            '@babel/react',
-                        ],
-                        plugins: ['transform-class-properties'],
-                    },
                 },
             },
         ],
