@@ -1,6 +1,7 @@
 import { getUpdatedHeaders, urls, options } from '../background';
 
 describe('Background', () => {
+    /*
     describe('#getUpdatedHeaders', () => {
         it('should update the content security policy header', () => {
             const details = {
@@ -44,6 +45,23 @@ describe('Background', () => {
     describe('#options', () => {
         it('should have the blocking and responseHeaders options', () => {
             expect(options).toEqual(['blocking', 'responseHeaders']);
+        });
+    });
+    */
+    describe('On headers received', () => {
+        it('should call the listener', () => {
+            expect(chrome.webRequest.onHeadersReceived.addListener)
+                .toHaveBeenCalledWith(
+                    expect.any(Function),
+                    {
+                        urls: ['https://mail.google.com/*', 'https://inbox.google.com/*'],
+                        types: ['main_frame'],
+                    },
+                    [
+                        'blocking',
+                        'responseHeaders',
+                    ],
+                );
         });
     });
 });
