@@ -44,6 +44,14 @@ Go to [gmail](https://mail.google.com), click on `Compose` to create a new email
 
 A list of templates should be loaded, and you should be able to choose the right template for your use case.
 
+### Running tests
+
+To run the unit tests just type the following command:
+
+`npm run test`
+
+Each file will be presented with its total coverage, per branch, statements, lines and functions.
+
 ## TODO
 
 Following steps would be user defined templates, meaning that a user would be able to upload custom templates.
