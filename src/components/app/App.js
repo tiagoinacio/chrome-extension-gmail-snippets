@@ -1,24 +1,45 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
+import PropTypes from 'prop-types';
 import './App.css';
 
 class App extends Component {
+    static propTypes = {
+        composeView: PropTypes.object.isRequire,
+    };
+
     state = {
         isIframeReady: false,
     };
 
+    componentDidMount() {
+        window.addEventListener('message', this.handleMessageReceived, false);
+    }
+
     render() {
         return (
-            <Fragment>
+            <div className="container">
                 { !this.state.isIframeReady && <div className="loader"></div> }
                 <iframe
-                    ref={ (iframe) => { this.iframe = iframe; } }
-                    onLoad={ this.onIframeReady }
+                    ref={(iframe) => { this.iframe = iframe; }}
+                    onLoad={this.onIframeReady}
                     className="iframe"
                     src='https://email-snippets.herokuapp.com'>
                     Your browser does not support iframes.
                 </iframe>
-            </Fragment>
+            </div>
         );
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('message', this.handleMessageReceived);
+    }
+
+    handleMessageReceived = (message) => {
+        const { composeView } = this.props;
+
+        if (message.origin === 'https://email-snippets.herokuapp.com') {
+            composeView.insertTextIntoBodyAtCursor(message.data.template);
+        }
     }
 
     onIframeReady = () => {

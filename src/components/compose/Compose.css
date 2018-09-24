@@ -10,4 +10,6 @@ div.inboxsdk__menu {
 
 div.inboxsdk__menu .inboxsdk__menuContent {
     height: 100%;
+    box-shadow: none;
+    border: 0;
 }

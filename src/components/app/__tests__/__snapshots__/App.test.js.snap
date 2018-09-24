@@ -2,27 +2,35 @@
 
 exports[`App when iframe is loaded should not render the loader 1`] = `
 <App>
-  <iframe
-    className="iframe"
-    onLoad={[Function]}
-    src="https://email-snippets.herokuapp.com"
+  <div
+    className="container"
   >
-    Your browser does not support iframes.
-  </iframe>
+    <iframe
+      className="iframe"
+      onLoad={[Function]}
+      src="https://email-snippets.herokuapp.com"
+    >
+      Your browser does not support iframes.
+    </iframe>
+  </div>
 </App>
 `;
 
 exports[`App while iframe is not loaded should render the loader 1`] = `
 <App>
   <div
-    className="loader"
-  />
-  <iframe
-    className="iframe"
-    onLoad={[Function]}
-    src="https://email-snippets.herokuapp.com"
+    className="container"
   >
-    Your browser does not support iframes.
-  </iframe>
+    <div
+      className="loader"
+    />
+    <iframe
+      className="iframe"
+      onLoad={[Function]}
+      src="https://email-snippets.herokuapp.com"
+    >
+      Your browser does not support iframes.
+    </iframe>
+  </div>
 </App>
 `;
