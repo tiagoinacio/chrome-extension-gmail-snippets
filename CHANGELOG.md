@@ -2,6 +2,21 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.1.0"></a>
+# [3.1.0](https://github.com/tiagoinacio/gmail-template-extension/compare/v3.0.0...v3.1.0) (2018-09-24)
+
+
+### Bug Fixes
+
+* Remove export values from background script ([8587e8e](https://github.com/tiagoinacio/gmail-template-extension/commit/8587e8e))
+
+
+### Features
+
+* Communicate between snippets server and iframe ([5325db8](https://github.com/tiagoinacio/gmail-template-extension/commit/5325db8))
+
+
+
 <a name="3.0.0"></a>
 # 3.0.0 (2018-09-22)
 
