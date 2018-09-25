@@ -2,6 +2,16 @@
 
 All notable changes to this project will be documented in this file. See [standard-version](https://github.com/conventional-changelog/standard-version) for commit guidelines.
 
+<a name="3.2.0"></a>
+# [3.2.0](https://github.com/tiagoinacio/gmail-template-extension/compare/v3.1.0...v3.2.0) (2018-09-25)
+
+
+### Features
+
+* Add end 2 end tests integration for the chrome extension ([1bc08c0](https://github.com/tiagoinacio/gmail-template-extension/commit/1bc08c0))
+
+
+
 <a name="3.1.0"></a>
 # [3.1.0](https://github.com/tiagoinacio/gmail-template-extension/compare/v3.0.0...v3.1.0) (2018-09-24)
 
