@@ -46,11 +46,45 @@ A list of templates should be loaded, and you should be able to choose the right
 
 ### Running tests
 
+#### Unit Tests
+
 To run the unit tests just type the following command:
 
 `npm run test`
 
 Each file will be presented with its total coverage, per branch, statements, lines and functions.
+
+#### End 2 End Tests
+
+You should have Java installed on your machine. Follow the instructions [here](https://www.oracle.com/technetwork/java/javase/downloads/index.html) and download the latest `JDK`.
+
+End2End tests run against a selenium server. To run the testes, just follow the steps below:
+
+1 - First you have to install the extension and allow the extension to load in incognito mode.
+
+2 - After that, create a `.secret` file under `e2e` directory with `username` and `password` for a gmail account.
+
+Example:
+
+```
+{ "username": "johndoe@gmail.com", password: "mypassword" }
+```
+
+3 - Start selenium server
+
+Type in your terminal:
+
+```
+npm run selenium
+```
+
+4 - Run the tests against the server
+
+Type in your terminal:
+
+```
+npm run e2e
+```
 
 ## TODO
 

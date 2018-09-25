@@ -5,9 +5,12 @@
 
 # testing
 /coverage
+/errorShots
 
 # production
 /dist
+
+e2e/.secret
 
 # misc
 .DS_Store

@@ -7,7 +7,9 @@
     "build": "npm run compile",
     "compile": "./node_modules/webpack/bin/webpack.js -p --config ./config/webpack.config.js",
     "release": "standard-version",
-    "test": "jest"
+    "test": "jest",
+    "selenium": "java -jar -Dwebdriver.chrome.driver='./node_modules/chromedriver/lib/chromedriver/chromedriver' ./e2e/selenium-server-standalone-3.5.3.jar",
+    "e2e": "./node_modules/.bin/wdio config/wdio.conf.js"
   },
   "repository": {
     "type": "git",
@@ -28,9 +30,9 @@
   },
   "homepage": "https://github.com/tiagoinacio/gmail-template-extension#readme",
   "dependencies": {
+    "prop-types": "^15.6.2",
     "react": "^16.5.2",
-    "react-dom": "^16.5.2",
-    "prop-types": "^15.6.2"
+    "react-dom": "^16.5.2"
   },
   "devDependencies": {
     "@babel/core": "^7.1.0",
@@ -42,6 +44,8 @@
     "babel-jest": "^23.6.0",
     "babel-loader": "^8.0.2",
     "babel-plugin-transform-class-properties": "^6.24.1",
+    "chai": "^4.1.2",
+    "chromedriver": "^2.42.0",
     "clean-webpack-plugin": "^0.1.19",
     "copy-webpack-plugin": "^4.5.2",
     "css-loader": "^1.0.0",
@@ -64,6 +68,9 @@
     "standard-version": "^4.4.0",
     "style-loader": "^0.23.0",
     "uglifyjs-webpack-plugin": "^2.0.1",
+    "wdio-mocha-framework": "^0.6.3",
+    "wdio-selenium-standalone-service": "0.0.10",
+    "webdriverio": "^4.13.2",
     "webpack": "^4.19.1",
     "webpack-cli": "^3.1.0",
     "webpack-concat-plugin": "^3.0.0",
@@ -78,7 +85,8 @@
     "globals": {
       "InboxSDK": true,
       "chrome": true,
-      "window": true
+      "window": true,
+      "browser": true
     },
     "rules": {
       "indent": [
