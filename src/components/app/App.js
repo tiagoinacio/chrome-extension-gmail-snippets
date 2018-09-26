@@ -4,7 +4,7 @@ import './App.css';
 
 class App extends Component {
     static propTypes = {
-        composeView: PropTypes.object.isRequire,
+        composeView: PropTypes.object.isRequired,
     };
 
     state = {

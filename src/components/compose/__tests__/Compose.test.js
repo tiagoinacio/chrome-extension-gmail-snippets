@@ -1,5 +1,10 @@
 import composeApp from '..';
-import React from 'react';
+import ReactDOM from 'react-dom';
+
+jest.mock('react-dom', () => ({
+    render: jest.fn(),
+    unmountComponentAtNode: jest.fn(),
+}));
 
 describe('composeApp', () => {
     describe('On instatiation', () => {
@@ -9,7 +14,7 @@ describe('composeApp', () => {
 
         beforeEach(() => {
             composeView = {
-                addButton: jest.fn(),
+                addButton: jest.fn(button => button),
             };
             registerComposeViewHandler = jest.fn(cb => cb(composeView));
             compose = {
@@ -33,6 +38,43 @@ describe('composeApp', () => {
                 hasDropdown: true,
                 onClick: expect.any(Function),
             }));
+        });
+
+        describe('#onClick', () => {
+            let button;
+            let once;
+
+            beforeEach(() => {
+                [[button]] = composeView.addButton.mock.calls;
+                once = jest.fn((_, cb) => cb());
+
+                button.onClick({
+                    dropdown: {
+                        el: 'button',
+                        once,
+                    },
+                });
+            });
+
+            it('should render the <App /> component', () => {
+                expect(ReactDOM.render).toHaveBeenCalledWith(
+                    expect.any(Object),
+                    'button',
+                );
+            });
+
+            it('should register the "destroy" event', () => {
+                expect(once).toHaveBeenCalledWith(
+                    'destroy',
+                    expect.any(Function),
+                );
+            });
+
+            describe('onDestroy', () => {
+                it('should unmount the component', () => {
+                    expect(ReactDOM.unmountComponentAtNode).toHaveBeenCalledWith('button');
+                });
+            });
         });
     });
 });

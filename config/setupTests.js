@@ -6,7 +6,7 @@ enzyme.configure({ adapter: new Adapter() });
 global.chrome = {
     webRequest: {
         onHeadersReceived: {
-            addListener: jest.fn(),
+            addListener: jest.fn(cb => cb),
         },
     },
 };

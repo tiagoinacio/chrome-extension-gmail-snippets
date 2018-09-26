@@ -86,7 +86,8 @@
       "InboxSDK": true,
       "chrome": true,
       "window": true,
-      "browser": true
+      "browser": true,
+      "document": true
     },
     "rules": {
       "indent": [
@@ -107,10 +108,15 @@
     "collectCoverageFrom": [
       "**/*.{js}",
       "!**/node_modules/**",
+      "!**/e2e/**",
       "!**/config/**",
       "!**/dist/**",
       "!**/coverage/**",
       "!**/vendor/**"
+    ],
+    "testPathIgnorePatterns": [
+        "node_mdules",
+        "e2e"
     ],
     "transform": {
       "^.+\\.js$": "babel-jest",
